@@ -1,7 +1,7 @@
 public class InfancyAcheivements {
 
     // attributes
-    int pointsReceived;
+    private int pointsReceived;
 
     // methods
     public static void babbleChallenge(){

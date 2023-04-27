@@ -1,9 +1,9 @@
 public class Game {
 
     // attributes
-    boolean kindergarten;
-    int points;
-    Baby baby;
+    private boolean kindergarten;
+    private int points;
+    private Baby baby;
 
 
 

@@ -1,14 +1,14 @@
 public class Baby {
 
     // attributes
-    double weight;
-    String name;
-    String hair;
-    String stuffedAnimal;
-    String stage;
-    int motorSkills;
-    int trustConnect;
-    int speechSkills;
+    private double weight;
+    private String name;
+    private String hair;
+    private String stuffedAnimal;
+    private String stage;
+    private int motorSkills;
+    private int trustConnect;
+    private int speechSkills;
 
 
     // constructor/s go here

@@ -1,7 +1,7 @@
 public class ToddlerAcheivements {
 
     // attributes
-    int pointsReceived;
+    private int pointsReceived;
 
     // methods
     public static void talkChallenge(){
