@@ -1,9 +1,10 @@
 public class Baby {
 
     // attributes
-    private double weight;
+    private int weight;
     private String name;
     private String hair;
+    private String eyes;
     private String stuffedAnimal;
     private String stage;
     private int motorSkills;
@@ -12,10 +13,11 @@ public class Baby {
 
 
     // constructor/s go here
-    public Baby(double weight, String name, String hair, String stuffedAnimal, String stage, int motorSkills,
+    public Baby(int weight, String name, String hair, String eyes, String stuffedAnimal, String stage, int motorSkills,
             int trustConnect, int speechSkills) {
         this.weight = weight;
         this.name = name;
+        this.eyes = eyes;
         this.hair = hair;
         this.stuffedAnimal = stuffedAnimal;
         this.stage = stage;
@@ -42,21 +44,40 @@ public class Baby {
     }
 
     // getters
-    public void getStage() {
-
+    public String getStage() {
+        return this.stage;
     }
 
-    public void getMotorSkills(){
-
+    public String getName(){
+        return this.name;
     }
 
-    public void getTrustConnectSkills(){
-
+    public int getWeight(){
+        return this.weight;
     }
 
-    public void getSpeechSkills() {
+    public String getEyes(){
+        return this.eyes;
+    }
 
+    public String getHair(){
+        return this.hair;
+    }
 
+    public String getStuffedAnimal(){
+        return this.stuffedAnimal;
+    }
+
+    public int getMotorSkills(){
+        return this.motorSkills;
+    }
+
+    public int getTrustConnectSkills(){
+        return this.trustConnect;
+    }
+
+    public int getSpeechSkills() {
+        return this.speechSkills;
     }
 
 
