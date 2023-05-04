@@ -17,15 +17,15 @@ public class Game {
         Baby baby = null;
         while(baby == null) {
             // try{
-                System.out.println("Pick your baby's attributes!\n");
-                System.out.println("What color eyes do you want your baby to have?\n1-Brown, 2-Blue, 3-Black, 4-Green, 5-Hazel");
+                System.out.println("pick your attributes!\n");
+                System.out.println("what color eyes do you want to have?\n1-brown, 2-blue, 3-black, 4-green, 5-hazel");
                 int eyes = input.nextInt();
-                System.out.println("What color hair do you want your baby to have?\n1-Brown, 2-Black, 3-Blonde, 4-Red");
+                System.out.println("what color hair do you want to have?\n1-brown, 2-black, 3-blonde, 4-red");
                 int hair = input.nextInt();
-                System.out.println("What stuffed animal do you want your baby to have?\n1-Dog, 2-Cat, 3-Horse, 4-Dolphin, 5-Bunny");
+                System.out.println("what stuffed animal do you want to have?\n1-dog, 2-cat, 3-horse, 4-dolphin, 5-bunny");
                 int stuffy = input.nextInt();
                 input.nextLine();
-                System.out.println("What do you want to name your baby?");
+                System.out.println("what do you want your name to be?");
                 String name = input.nextLine();
             // }catch(Exception e){
             //     System.out.println("There was an issue with one of your inputs. Please redo this.");
@@ -41,9 +41,9 @@ public class Game {
             try{
                 baby = new Baby(babyWeight, name, hairList.get(hair-1), eyeList.get(eyes-1), stuffedAnimal.get(stuffy-1), "Infant", motorSkills, trustConnect, speechSkills);
             }catch(ArrayIndexOutOfBoundsException e){
-                System.out.println("Sorry, please choose attributes that we have provided you with (select within our number range).");
+                System.out.println("sorry, please choose attributes that we have provided you with (select within our number range).");
             }catch(Exception e){
-                System.out.println("We are making you a default baby because it's not working, sorry.");
+                System.out.println("we are making you a default baby because it's not working, sorry.");
                 baby = new Baby(babyWeight, name, hairList.get(0), eyeList.get(0), stuffedAnimal.get(0), "Infant", motorSkills, trustConnect, speechSkills);
             }
         }
@@ -53,17 +53,17 @@ public class Game {
     }
 
     public static void printBabyInfo(Baby b){
-        System.out.println("\tBaby " + b.getName() + " has " + b.getEyes() + " eyes and " + b.getHair() + " hair!");
+        System.out.println("\tbaby " + b.getName() + " has " + b.getEyes() + " eyes and " + b.getHair() + " hair!");
         System.out.println("\t" + b.getName() + "'s favorite stuffed animal is their stuffed " + b.getStuffedAnimal());
-        System.out.println("\tHere are your official baby stats:");
+        System.out.println("\there are your official stats:");
         printBabyStats(b);
     }
 
     public static void printBabyStats(Baby b){
-        System.out.println("\t\tWeight: " + b.getWeight() + " oz.");
-        System.out.println("\t\tMotor Skills: " + b.getMotorSkills());
-        System.out.println("\t\tTrust & Connection Skills: " + b.getTrustConnectSkills());
-        System.out.println("\t\tSpeech Skills: " + b.getSpeechSkills());
+        System.out.println("\t\tweight: " + b.getWeight() + " oz.");
+        System.out.println("\t\tmotor skills: " + b.getMotorSkills());
+        System.out.println("\t\ttrust & connection skills: " + b.getTrustConnectSkills());
+        System.out.println("\t\tspeech skills: " + b.getSpeechSkills());
     }
 
     public static void loadArrayLists(){
@@ -94,14 +94,14 @@ public class Game {
         boolean confirm = false;
 
         while(!kindergarten){
-            System.out.println("\tSelect a challenge area to work on!\n\tmotor skills, trust and connection, or speech skills?");
+            System.out.println("\tselect a challenge area to work on!\n\tmotor skills, trust and connection, or speech skills?");
             System.out.println("\tmotor skills, motor, or m | trust, connection, t, or, c | speech or s");
             // while(challengeChoice.equals("")){}
                 challengeChoice = input.nextLine();
 
             if(challengeChoice.toLowerCase().equals("motor") || challengeChoice.toLowerCase().equals("motor skills") || challengeChoice.toLowerCase().equals("m")){
                 // save value from this and set baby motor skill to this. (add)
-                System.out.println("Do you want to try picking up your head or crawling?");
+                System.out.println("do you want to try picking up your head or crawling?");
                 confirm = false;
                 while(!confirm){
                     challengeChoice = input.nextLine();
@@ -120,7 +120,7 @@ public class Game {
             }else if(challengeChoice.toLowerCase().equals("speech") || challengeChoice.toLowerCase().equals("speech skills") || challengeChoice.toLowerCase().equals("s") || challengeChoice.toLowerCase().equals("talk")){
 
             }else{
-                System.out.println("We didn't recognize your choice. Please choose again.");
+                System.out.println("we didn't recognize your choice. please choose again.");
             }
 
             kindergarten = points >= 17;
@@ -133,18 +133,18 @@ public class Game {
         loadArrayLists();
 
         Scanner input = new Scanner(System.in);
-        Displays.display("\tWelcome to KinderGrow!\n\tThe aim of the game is to successfully help your baby (You) make it\n\tthrough infancy and the toddler stages to Kindergarten successfully!\n");
+        Displays.display("\twelcome to KinderGrow!\n\tyou are a baby now\n\tthe aim of the game is to successfully make it\n\tthrough infancy and the toddler stages to Kindergarten successfully!\n");
 
         Baby baby = createBaby(input);
 
         Displays.displayScene();
-        System.out.println("\t 🎊 Congratulations! Your baby (you) has arrived! 🎊");
+        System.out.println("\t 🎊 congratulations! you have arrived! 🎊");
         printBabyInfo(baby);
 
         // actual game
         game(baby, input);
 
-        System.out.println("\t🎊🎊🎊 Congratulations! You made it to Kindergarten!!!! 🎊🎊🎊🎊\n");
+        System.out.println("\t🎊🎊🎊 congratulations! you made it to kindergarten!!!! 🎊🎊🎊🎊\n");
 
         input.close();
     }
