@@ -145,6 +145,7 @@ public class Game {
         game(baby, input);
 
         System.out.println("\t🎊🎊🎊 congratulations! you made it to kindergarten!!!! 🎊🎊🎊🎊\n");
+        System.out.println("\tnow...\n\tit's time for kindergarten...\n\tcan you make it to 1st grade?");
 
         input.close();
     }
