@@ -74,7 +74,7 @@ public class Game {
         eyeList.add("green");
         eyeList.add("hazel");
 
-        // eye color options
+        // hair color options
         hairList.add("brown");
         hairList.add("black");
         hairList.add("blonde");
@@ -84,7 +84,7 @@ public class Game {
         stuffedAnimal.add("dog");
         stuffedAnimal.add("cat");
         stuffedAnimal.add("bear");
-        stuffedAnimal.add("dolphin");
+        stuffedAnimal.add("otter");
         stuffedAnimal.add("bunny");
     }
     
@@ -95,6 +95,7 @@ public class Game {
 
         while(!kindergarten){
             System.out.println("\tSelect a challenge area to work on!\n\tmotor skills, trust and connection, or speech skills?");
+            System.out.println("\tmotor skills, motor, or m | trust, connection, t, or, c | speech or s");
             // while(challengeChoice.equals("")){}
                 challengeChoice = input.nextLine();
 
