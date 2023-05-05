@@ -27,9 +27,7 @@ public class Game {
                 input.nextLine();
                 System.out.println("what do you want your name to be?");
                 String name = input.nextLine();
-            // }catch(Exception e){
-            //     System.out.println("There was an issue with one of your inputs. Please redo this.");
-            // }
+            
 
             // Randomly generated values
             // int Random = (int)(Math.random()* ( Max - Min + 1) + min );
@@ -96,7 +94,7 @@ public class Game {
         while(!kindergarten){
             System.out.println("\tselect a challenge area to work on!\n\tmotor skills, trust and connection, or speech skills?\n");
             System.out.println("\tplease indicate: motor skills, motor, or m | trust, connection, t, or, c | speech or s\n");
-            // while(challengeChoice.equals("")){}
+            
                 challengeChoice = input.nextLine();
 
             if(challengeChoice.toLowerCase().equals("motor") || challengeChoice.toLowerCase().equals("motor skills") || challengeChoice.toLowerCase().equals("m")){
