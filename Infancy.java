@@ -56,7 +56,20 @@ public class Infancy {
         return pointsReceived;
     }
 
-    public static void crawlChallenge(){
+    public static void crawlChallenge(Baby baby, String stuffedAnimal, Scanner input){
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println("WELCOME TO LEARNING TO CRAWL");
+
+        System.out.println("you wake up from a nap and your " + stuffedAnimal + " stuffed animal is nowhere to be found.");
+        System.out.println("you are feeling a bit more confident picking up your head and see a faint outline of your stuffed animal in the distance.");
+        System.out.println("you try to cry and get your parent's attention but nothing is working.");
+        System.out.println("you realize your only option is to get to your stuffed animal all by yourself...");
+
+        System.out.println("IN ORDER TO GET TO YOUR STUFFED ANIMAL YOU MUST CRAWL TO THE CORRECT ROOM");
+        System.out.println("GUESS...IS YOUR STUFFED ANIMAL IN THE: kitchen, living room, bedroom, bathroom, OR nursery?");
+
+
+
 
     }
     

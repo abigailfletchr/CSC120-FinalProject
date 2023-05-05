@@ -16,9 +16,7 @@ public class Displays {
     }
 
     public static void display(String message){
-        // System.out.println("╔═.✵.══════════╗");
-        // System.out.println("|     msg      |");
-        // System.out.println("╚══════════.✵.═╝");
+       
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
         System.out.println(message);
     }

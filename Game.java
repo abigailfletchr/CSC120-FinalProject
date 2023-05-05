@@ -17,7 +17,7 @@ public class Game {
         Baby baby = null;
         while(baby == null) {
             // try{
-                System.out.println("pick your attributes!\n");
+                System.out.println("lets begin... pick your attributes!\n");
                 System.out.println("what color eyes do you want to have?\n1-brown, 2-blue, 3-black, 4-green, 5-hazel");
                 int eyes = input.nextInt();
                 System.out.println("what color hair do you want to have?\n1-brown, 2-black, 3-blonde, 4-red");
@@ -94,8 +94,8 @@ public class Game {
         boolean confirm = false;
 
         while(!kindergarten){
-            System.out.println("\tselect a challenge area to work on!\n\tmotor skills, trust and connection, or speech skills?");
-            System.out.println("\tmotor skills, motor, or m | trust, connection, t, or, c | speech or s");
+            System.out.println("\tselect a challenge area to work on!\n\tmotor skills, trust and connection, or speech skills?\n");
+            System.out.println("\tplease indicate: motor skills, motor, or m | trust, connection, t, or, c | speech or s\n");
             // while(challengeChoice.equals("")){}
                 challengeChoice = input.nextLine();
 
@@ -109,7 +109,7 @@ public class Game {
                         Infancy.pickHeadUpChallenge(baby);
                         confirm = true;
                     }else if(challengeChoice.toLowerCase().equals("crawling") || challengeChoice.toLowerCase().equals("crawl")){
-                        Infancy.crawlChallenge();
+                        Infancy.crawlChallenge(baby, challengeChoice, input);
                         confirm = true;
                     }else{
                         System.out.println("please choose again");
@@ -133,12 +133,12 @@ public class Game {
         loadArrayLists();
 
         Scanner input = new Scanner(System.in);
-        Displays.display("\twelcome to KinderGrow!\n\tyou are a baby now\n\tthe aim of the game is to successfully make it\n\tthrough infancy and the toddler stages to Kindergarten successfully!\n");
+        Displays.display("\twelcome to KinderGrow!\n\n\tyou are a baby now!\n\n\tthe aim of the game is to successfully make it through infancy and the toddler stages to Kindergarten successfully!\n");
 
         Baby baby = createBaby(input);
 
         Displays.displayScene();
-        System.out.println("\t 🎊 congratulations! you have arrived! 🎊");
+        System.out.println("\t 🎊 congratulations! you have arrived! 🎊\n");
         printBabyInfo(baby);
 
         // actual game
