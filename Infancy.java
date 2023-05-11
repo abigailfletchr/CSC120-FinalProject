@@ -1,30 +1,42 @@
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class Infancy {
 
-    // attributes
+    /**
+     * 
+     */
     private static int pointsReceived;
 
-    // methods
+    /**
+     * 
+     * @param baby
+     * @param input
+     * @return
+     */
     public static int babbleChallenge(Baby baby, Scanner input){
+        String enter = "";
+
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         System.out.println("WELCOME TO LEARNING TO BABBLE\n");
 
         System.out.println("you are going about your day and start to feel agitated.");
         System.out.println("one of your parents came to be with you! YAY!");
+        System.out.println("\033[3mpress enter to continue\033[0m");
+        enter = input.nextLine();
         System.out.println("you are still figuring life out and can not tell if it's your mom, moms, dad, dads, or parent helping you.\n");
         System.out.println("you know that you can babble the sounds 'mamama' 'dadada' or 'lalala' to identify who it is.");
         System.out.println("---------------------------------------------------------------------------------------------");
+        System.out.println("\033[3mpress enter to continue\033[0m");
+        enter = input.nextLine();
        
-        System.out.println("IN ORDER TO SUCCESSFULLY BABBLE YOU MUST CORRECTLY IDENTIFY WHICH PARENT IS IN FRONT OF YOU.");
-        System.out.println("if you think its your mom/moms guess, 'mamama'");
-        System.out.println("if you think its your dad/dads guess, 'dadada'");
-        System.out.println("if you think its your parent/parents guess, 'lalala'");
+        System.out.println("IN ORDER TO SUCCESSFULLY BABBLE YOU MUST CORRECTLY IDENTIFY WHICH PARENT IS IN FRONT OF YOU.\n");
+        System.out.println("if you think its your mom/moms guess, 'mamama'.");
+        System.out.println("if you think its your dad/dads guess, 'dadada'.");
+        System.out.println("if you think its your parent/parents guess, 'lalala'.\n");
         System.out.println("you have 2 chances to guess.");
-        System.out.println("if you guess correctly within 2 tries you win 3 Speaking Skills points.\n");
-        System.out.println("GUESS... will you say 'mamama' 'dadada' or 'lalala'?");
+        System.out.println("if you guess correctly within 2 tries you win 3 speech skills points.\n");
+        System.out.println("GUESS... will you babble 'mamama' 'dadada' or 'lalala'?");
 
         ArrayList<String> babbles = new ArrayList<String>();
         babbles.add("mamama"); // 1
@@ -38,19 +50,21 @@ public class Infancy {
 
         while(numGuesses < 2 && !guess.equals(babbleAnswer)){
             System.out.println("-----------------------------------------------");
-            System.out.println("your number of tries remaining: " + (2-numGuesses));
+            System.out.println("your number of tries remaining: " + (2-numGuesses) + "\n");
             System.out.print("are you babbling 'mamama' 'dadada' or 'lalala': ");
             guess = input.nextLine();
 
             for(String r : babbles){
                 if(guess.equals(r)){
-                    System.out.println("your guess was: " + r);
+                    System.out.println("\nyour guess was: " + r + "\n");
                 }
             }
 
             if(guess.equals(babbleAnswer)){
                 System.out.println("\nCORRECT!");
-                System.out.println("good job, you earned 3 points toward Speech Skills\n");
+                System.out.println("\033[3mpress enter to continue\033[0m");
+                enter = input.nextLine();
+                System.out.println("good job, you earned 3 points toward speech skills\n");
                 return 3; // return a value
             }else{
                 System.out.println("sorry, wrong guess... try again.\n");
@@ -63,6 +77,12 @@ public class Infancy {
         return 0;
     }
 
+    /**
+     * 
+     * @param baby
+     * @param input
+     * @return
+     */
     public static int signLangChallenge(Baby baby, Scanner input){
 
         String enter = "";
@@ -85,7 +105,7 @@ public class Infancy {
         System.out.println("------------------------------------------------------------------------------------------------------");
 
         System.out.println("IN ORDER TO TRUST & CONNECT WITH YOUR PARENT YOU MUST CHOOSE");
-        System.out.println("THE CORRECT SIGN LANGUAGE DESCRIPTION BASED ON THE GIVEN NEED.");
+        System.out.println("THE CORRECT SIGN LANGUAGE DESCRIPTION BASED ON THE GIVEN NEED.\n");
 
         ArrayList<String> needs = new ArrayList<String>();
         needs.add("want more food"); // 1
@@ -97,7 +117,7 @@ public class Infancy {
         String needAnswer = needs.get(randInt-1);
         System.out.println("YOUR NEED IS: " + needAnswer);
 
-        System.out.println("PLEASE CHOOSE THE CORRECT SIGN DESCRIPTION BASED ON YOUR NEED.");
+        System.out.println("\nPLEASE CHOOSE THE CORRECT SIGN DESCRIPTION BASED ON YOUR NEED.");
 
         ArrayList<String> signDescription = new ArrayList<String>();
         signDescription.add("tap fingertips together twice."); // 1
@@ -105,7 +125,7 @@ public class Infancy {
         signDescription.add("touch lips with fingers, then move hand out (like blowing a kiss)."); // 3
         signDescription.add("both hands in fists and on top of each other, tuck the thumb of the bottom hand inside the upper fist. pull the bottom hand down from the upper hand, leaving the thumb extended."); // 4
 
-        System.out.println("Your options are: \n");
+        System.out.println("your options are: \n");
         int i = 1;
         for(String sign: signDescription){
             System.out.println("[" + i + "] : " + sign);
@@ -118,19 +138,21 @@ public class Infancy {
 
         while(numGuesses < 2){
             System.out.println("--------------------------------------------------");
-            System.out.println("your number of tries remaining: " + (2-numGuesses));
+            System.out.println("your number of tries remaining: " + (2-numGuesses) + "\n");
             System.out.print("which sign description do you choose : ");
             guess = input.nextInt();
 
             for(String s : signDescription){
                 if(signDescription.get(guess-1).equals(s)){
-                    System.out.println("your guess was: " + s);
+                    System.out.println("\nyour guess was: " + s + "\n");
                 }
             }
 
             if(signDescription.get(guess-1).equals(signAnswer)){
                 System.out.println("CORRECT!");
-                System.out.println("good job, you earned 3 points toward Trust & Connection Skills!\n");
+                System.out.println("\033[3mpress enter to continue\033[0m");
+                enter = input.nextLine();
+                System.out.println("good job, you earned 3 points toward trust & connection skills!\n");
                 return 3; // return a value
             }else{
                 System.out.println("sorry, wrong guess... try again.\n");
@@ -138,20 +160,26 @@ public class Infancy {
             numGuesses++;
         }
 
-        System.out.println("Sorry, you earned no points here.");
+        System.out.println("sorry, you earned no points here.");
         return 0;
     }
 
+    /**
+     * 
+     * @param baby
+     * @return
+     */
     public static int pickHeadUpChallenge(Baby baby){
+
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-        System.out.println("WELCOME TO LEARNING TO PICK YOUR HEAD UP");
+        System.out.println("WELCOME TO LEARNING TO PICK YOUR HEAD UP\n");
 
         System.out.println("guess a number between 1 and 10.\nthe closer you are to the right number\nthe more motor skill points you earn!");
 
         int rightNumber = (int)(Math.random()*(10 - 1 + 1) + 1);
         int guess = -1;
         pointsReceived = 0;
-        Scanner input = new Scanner(System.in); // dont close
+        Scanner input = new Scanner(System.in);
 
         while(true){
             try{
@@ -164,8 +192,8 @@ public class Infancy {
             }
         }
         
-        System.out.println("you guessed: " + guess);
-        System.out.println("the right number was: " + rightNumber);
+        System.out.println("\nyou guessed: " + guess + "\n");
+        System.out.println("\nthe right number was: " + rightNumber);
 
         if(guess == rightNumber){
             System.out.println("CONGRATS! " + baby.getName() + " guessed the right number!");
@@ -184,17 +212,30 @@ public class Infancy {
         return pointsReceived;
     }
 
+    /**
+     * 
+     * @param baby
+     * @param stuffedAnimal
+     * @param input
+     * @return
+     */
     public static int crawlChallenge(Baby baby, String stuffedAnimal, Scanner input){
+        String enter = "";
+
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-        System.out.println("WELCOME TO LEARNING TO CRAWL");
+        System.out.println("WELCOME TO LEARNING TO CRAWL\n");
 
         System.out.println("you wake up from a nap and your " + stuffedAnimal + " stuffed animal is nowhere to be found.");
         System.out.println("you are feeling a bit more confident picking up your head and see a faint outline of your stuffed animal in the distance.");
+        System.out.println("\033[3mpress enter to continue\033[0m");
+        enter = input.nextLine();
         System.out.println("you try to cry and get your parent's attention but nothing is working.");
         System.out.println("you realize your only option is to get to your stuffed animal all by yourself...");
         System.out.println("---------------------------------------------------------------------------------");
+        System.out.println("\033[3mpress enter to continue\033[0m");
+        enter = input.nextLine();
 
-        System.out.println("IN ORDER TO GET TO YOUR STUFFED ANIMAL YOU MUST CRAWL TO THE CORRECT ROOM.");
+        System.out.println("IN ORDER TO GET TO YOUR STUFFED ANIMAL YOU MUST CRAWL TO THE CORRECT ROOM.\n");
         System.out.println("you have 2 chances to guess.\n");
         System.out.println("GUESS...IS YOUR STUFFED ANIMAL IN THE: kitchen, living room, bedroom, bathroom, OR nursery?");
 
@@ -212,19 +253,19 @@ public class Infancy {
 
         while(numGuesses < 2 && !guess.equals(roomAnswer)){
             System.out.println("--------------------------------------------------");
-            System.out.println("your number of tries remaining: " + (2-numGuesses));
+            System.out.println("your number of tries remaining: " + (2-numGuesses) + "\n");
             System.out.print("which room do you think the stuffed animal is in? : ");
             guess = input.nextLine();
 
             for(String r : rooms){
                 if(guess.equals(r)){
-                    System.out.println("your guess was: " + r);
+                    System.out.println("\nyour guess was: " + r + "\n");
                 }
             }
 
             if(guess.equals(roomAnswer)){
                 System.out.println("CORRECT!");
-                System.out.println("good job, you earned 3 points toward Motor Skills!\n");
+                System.out.println("good job, you earned 3 points toward motor skills!\n");
                 return 3; // return a value
             }else{
                 System.out.println("sorry, wrong guess... try again.\n");
