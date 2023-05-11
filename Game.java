@@ -104,24 +104,27 @@ public class Game {
                 while(!confirm){
                     challengeChoice = input.nextLine();
                     if(challengeChoice.toLowerCase().equals("picking up head") || challengeChoice.toLowerCase().equals("head")){
-                        Infancy.pickHeadUpChallenge(baby);
+                        baby.setMotorSkills(Infancy.pickHeadUpChallenge(baby));
                         confirm = true;
                     }else if(challengeChoice.toLowerCase().equals("crawling") || challengeChoice.toLowerCase().equals("crawl")){
-                        Infancy.crawlChallenge(baby, challengeChoice, input);
+                        baby.setMotorSkills(Infancy.crawlChallenge(baby, challengeChoice, input));
                         confirm = true;
                     }else{
                         System.out.println("please choose again");
                     }
                 }
             }else if(challengeChoice.toLowerCase().equals("trust") || challengeChoice.toLowerCase().equals("trust skills") || challengeChoice.toLowerCase().equals("t") || challengeChoice.toLowerCase().equals("connection")){
-
+                baby.setTrustConnectSkills(Infancy.signLangChallenge(baby, input));
+                input.nextLine();
             }else if(challengeChoice.toLowerCase().equals("speech") || challengeChoice.toLowerCase().equals("speech skills") || challengeChoice.toLowerCase().equals("s") || challengeChoice.toLowerCase().equals("talk")){
-
+                baby.setSpeechSkills(Infancy.babbleChallenge(baby, input));
+                input.nextLine();
             }else{
                 System.out.println("we didn't recognize your choice. please choose again.");
             }
-
+            points = baby.getMotorSkills() + baby.getSpeechSkills() + baby.getTrustConnectSkills();
             kindergarten = points >= 17;
+            printBabyStats(baby);
         }
     }
     

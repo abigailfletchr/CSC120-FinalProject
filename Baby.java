@@ -27,20 +27,20 @@ public class Baby {
     }
 
     // setters
-    public void setStage() {
-
+    public void setStage(String s) {
+        this.stage = s;
     }
 
-    public void setMotorSkills(){
-
+    public void setMotorSkills(int m){
+        this.motorSkills += m;
     }
 
-    public void setTrustConnectSkills(){
-
+    public void setTrustConnectSkills(int t){
+        this.trustConnect += t;
     }
 
-    public void setSpeechSkills() {
-
+    public void setSpeechSkills(int s) {
+        this.speechSkills += s;
     }
 
     // getters
