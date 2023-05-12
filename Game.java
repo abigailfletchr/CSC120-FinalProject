@@ -25,28 +25,29 @@ public class Game {
                 System.out.println("LETS BEGIN...");
                 System.out.println("\033[3mpress enter to continue\033[0m");
                 enter = input.nextLine();
+                System.out.println("----------------------------------------------------------------------------");
                 System.out.println("PICK YOUR ATTRIBUTES!\n");
-                System.out.println("WHAT COLOR EYES DO YOU HAVE?\n1-brown, 2-blue, 3-black, 4-green, 5-hazel\n");
+                System.out.println("WHAT COLOR EYES DO YOU HAVE?\n1-BROWN, 2-BLUE, 3-BLACK, 4-GREEN, 5-HAZEL\n");
                 int eyes = input.nextInt();
-                System.out.println("\nWHAT COLOR HAIR DO YOU HAVE?\n1-brown, 2-black, 3-blonde, 4-red\n");
+                System.out.println("\nWHAT COLOR HAIR DO YOU HAVE?\n1-BROWN, 2-BLACK, 3-BLONDE, 4-RED\n");
                 int hair = input.nextInt();
-                System.out.println("\nWHAT STUFFED ANIMAL DO YOU HAVE?\n1-dog, 2-cat, 3-horse, 4-dolphin, 5-bunny\n");
+                System.out.println("\nWHAT STUFFED ANIMAL DO YOU HAVE?\n1-DOG, 2-CAT, 3-HORSE, 4-OTTER, 5-BUNNY\n");
                 int stuffy = input.nextInt();
                 input.nextLine();
                 System.out.println("\nWHAT IS YOUR LOVELY NAME?\n");
                 String name = input.nextLine();
             
             int babyWeight = (int)(Math.random()* (13 - 5 + 1) + 5);
-            int motorSkills = (int)(Math.random()* (5 + 1)); // out of 10
+            int motorSkills = (int)(Math.random()* (5 + 1));
             int trustConnect = (int)(Math.random()* (5 + 1));
             int speechSkills = (int)(Math.random()* (5 + 1));
 
             try{
                 baby = new Baby(babyWeight, name, hairList.get(hair-1), eyeList.get(eyes-1), stuffedAnimal.get(stuffy-1), "Infant", motorSkills, trustConnect, speechSkills);
             }catch(ArrayIndexOutOfBoundsException e){
-                System.out.println("sorry, please choose attributes that we have provided you with (select within our number range).");
+                System.out.println("PLEASE CHOOSE ATTRIBUTES WE HAVE PROVIDED WITHIN THE NUMBER RANGE");
             }catch(Exception e){
-                System.out.println("we are making you a default baby because it's not working, sorry.");
+                System.out.println("MAKING DEFAULT BABY... SORRY");
                 baby = new Baby(babyWeight, name, hairList.get(0), eyeList.get(0), stuffedAnimal.get(0), "Infant", motorSkills, trustConnect, speechSkills);
             }
         }
@@ -59,9 +60,9 @@ public class Game {
      * 
      */
     public static void printBabyInfo(Baby b){
-        System.out.println("\tBABY " + b.getName() + " HAS " + b.getEyes() + " EYES & " + b.getHair() + " HAIR!");
-        System.out.println("\t" + b.getName() + "'S FAVORITE STUFFED ANIMAL IS " + b.getStuffedAnimal());
-        System.out.println("\n\tOFFICIAL STATS:");
+        System.out.println("BABY " + b.getName().toUpperCase() + " HAS " + b.getEyes() + " EYES & " + b.getHair() + " HAIR!");
+        System.out.println(b.getName().toUpperCase() + "'S STUFFED ANIMAL IS A " + b.getStuffedAnimal());
+        System.out.println("\nOFFICIAL STATS:");
         printBabyStats(b);
     }
 
@@ -70,32 +71,32 @@ public class Game {
      * @param b
      */
     public static void printBabyStats(Baby b){
-        System.out.println("\t\tWEIGHT: " + b.getWeight() + " oz.");
-        System.out.println("\t\tMOTOR SKILLS: " + b.getMotorSkills());
-        System.out.println("\t\tTRUST & CONNECTION SKILLS: " + b.getTrustConnectSkills());
-        System.out.println("\t\tSPEECH SKILLS: " + b.getSpeechSkills() + "\n");
+        System.out.println("\n\tWEIGHT: " + b.getWeight() + " oz.");
+        System.out.println("\tMOTOR SKILLS: " + b.getMotorSkills());
+        System.out.println("\tTRUST & CONNECTION SKILLS: " + b.getTrustConnectSkills());
+        System.out.println("\tSPEECH SKILLS: " + b.getSpeechSkills() + "\n");
     }
 
     /**
      * 
      */
     public static void loadArrayLists(){
-        eyeList.add("brown");
-        eyeList.add("blue");
-        eyeList.add("black");
-        eyeList.add("green");
-        eyeList.add("hazel");
+        eyeList.add("BROWN");
+        eyeList.add("BLUE");
+        eyeList.add("BLACK");
+        eyeList.add("GREEN");
+        eyeList.add("HAZEL");
 
-        hairList.add("brown");
-        hairList.add("black");
-        hairList.add("blonde");
-        hairList.add("red");
+        hairList.add("BROWN");
+        hairList.add("BLACK");
+        hairList.add("BLONDE");
+        hairList.add("RED");
 
-        stuffedAnimal.add("dog");
-        stuffedAnimal.add("cat");
-        stuffedAnimal.add("bear");
-        stuffedAnimal.add("otter");
-        stuffedAnimal.add("bunny");
+        stuffedAnimal.add("DOG");
+        stuffedAnimal.add("CAT");
+        stuffedAnimal.add("BEAR");
+        stuffedAnimal.add("OTTER");
+        stuffedAnimal.add("BUNNY");
     }
     
     /**
@@ -117,8 +118,8 @@ public class Game {
         tries.put("babble challenge", 0);
 
         while(!kindergarten && !allDone){
-            System.out.println("\tSELECT A CATEGORY TO IMPROVE ON!\n\tmotor skills, trust and connection, or speech skills?\n");
-            System.out.println("\tplease indicate: motor skills, motor, or m | trust, connection, t, or, c | speech or s\n");
+            System.out.println("SELECT A CATEGORY TO IMPROVE ON!\nMOTOR SKILLS, TRUST & CONNECTION, OR SPEECH?\n\n");
+            System.out.println("PLEASE INDICATE: MOTOR SKILLS, MOTOR, OR M | TRUST, CONNECTION, T, OR C | SPEECH OR S\n");
             
                 challengeChoice = input.nextLine();
 
@@ -128,38 +129,40 @@ public class Game {
                 confirm = false;
                 while(!confirm){
                     challengeChoice = input.nextLine();
-                    if((challengeChoice.toLowerCase().equals("picking up head") || challengeChoice.toLowerCase().equals("head")) && !maxHd){
-                        baby.setMotorSkills(Infancy.pickHeadUpChallenge(baby));
+                    if((challengeChoice.toLowerCase().equals("picking up my head") || challengeChoice.toLowerCase().equals("head")) && !maxHd){
+                        baby.setMotorSkills(Infancy.pickHeadUpChallenge(baby, input));
                         confirm = true;
                         tries.put("head challenge", tries.get("head challenge") + 1);
                         maxHd = tries.get("head challenge") >= 2;
+                        input.nextLine();
                     }else if((challengeChoice.toLowerCase().equals("crawling") || challengeChoice.toLowerCase().equals("crawl")) && !maxCrawl){
                         baby.setMotorSkills(Infancy.crawlChallenge(baby, baby.getStuffedAnimal(), input));
                         confirm = true;
                         tries.put("crawl challenge", tries.get("crawl challenge") + 1);
                         maxCrawl = tries.get("crawl challenge") >= 2;
+                        input.nextLine();
                     }else{
                         if(maxHd && !maxCrawl){
-                            System.out.println("Sorry, you can't do the head lift challenge any more! You can only play it twice!\nYou can only try the crawl challenge.");
+                            System.out.println("YOU CAN NOT DO THE HEADLIFT CHALLENGE ANYMORE! YOU CAN ONLY PLAY TWICE\n");
                         }else if(maxCrawl && !maxHd){
-                            System.out.println("Sorry, you can't do the crawling challenge any more! You can only play it twice!\nYou can only try the head lift challenge.");
+                            System.out.println("YOU CAN NOT DO THE CRAWLING CHALLENGE ANYMORE! YOU CAN ONLY PLAY TWICE\n");
                         }else if(maxCrawl && maxHd){
-                            System.out.println("Oops, sorry, you can't do any more motor skill challenges!");
+                            System.out.println("OOPS, NO MORE MOTOR SKILLS CHALLENGES LEFT");
                             blockMotor = true;
                             confirm = true;
                         }else{
-                            System.out.println("Please choose again:");
+                            System.out.println("PLEASE CHOOSE SOMETHING ELSE");
                         }
                     }
                 }
-            }else if((challengeChoice.toLowerCase().equals("trust") || challengeChoice.toLowerCase().equals("trust skills") || challengeChoice.toLowerCase().equals("t") || challengeChoice.toLowerCase().equals("connection")) && !blockTrust){
+            }else if((challengeChoice.toLowerCase().equals("trust") || challengeChoice.toLowerCase().equals("trust skills") || challengeChoice.toLowerCase().equals("t") || challengeChoice.toLowerCase().equals("connection") || challengeChoice.toLowerCase().equals("c")) && !blockTrust){
                 if(!maxSign){
                     baby.setTrustConnectSkills(Infancy.signLangChallenge(baby, input));
                     tries.put("sign challenge", tries.get("sign challenge") + 1);
                     maxSign = tries.get("sign challenge") >= 2;
                     input.nextLine();
                 }else{
-                    System.out.println("Sorry! You are out of tries to boost trust and connection skills!");
+                    System.out.println("OOPS, YOU HAVE NO MORE TRUST AND CONNECT CHALLENGES");
                     blockTrust = true;
                 }
             }else if((challengeChoice.toLowerCase().equals("speech") || challengeChoice.toLowerCase().equals("speech skills") || challengeChoice.toLowerCase().equals("s") || challengeChoice.toLowerCase().equals("talk")) && !blockSpeech){
@@ -169,16 +172,16 @@ public class Game {
                     maxBabble = tries.get("babble challenge") >= 2;
                     input.nextLine();
                 }else{
-                    System.out.println("Sorry! You are out of tries to boost speech skills!");
+                    System.out.println("OOPS, YOU GAVE NO MORE SPEECH SKILLS CHALLENGES");
                     blockSpeech = true;
                 }
             }else{
                 if(blockMotor && blockSpeech && blockTrust){
-                    System.out.println("sorry, you cannot attempt any more challenges. it's two tries per challenge!");
+                    System.out.println("YOU CAN NOT ATTEMPT ANYMORE CHALLENGES, ONLY 2 ATTEMPTS PER CHALLENGE");
                 }else if(blockMotor || blockSpeech || blockTrust){
-                    System.out.println("sorry, you can't attempt the challenge category you selected again. you're out of tries for that category!");
+                    System.out.println("SORRY, YOU ARE OUT OF TRIES FOR THAT CATEGORY");
                 }else{
-                    System.out.println("we didn't recognize your choice. please choose again.");
+                    System.out.println("WE DID NOT RECOGNIZE, PLEASE TRY AGAIN");
                 }
             }
             points = baby.getMotorSkills() + baby.getSpeechSkills() + baby.getTrustConnectSkills();
@@ -188,36 +191,27 @@ public class Game {
         }
 
         if(kindergarten){
-            // if(baby.getMotorSkills() < 10){
-            //     System.out.println("\nOh no, baby " + baby.getName() + " is probably going to have a hard time in PE!");
-            // }else if(baby.getTrustConnectSkills() < 10){
-            //     System.out.println("\nOh no, baby " + baby.getName() + " is probably going to have a hard time making friends and will have complicated relationships with teachers!");
-            // }else if(baby.getSpeechSkills() < 10){
-            //     System.out.println("\nOh no, baby " + baby.getName() + " is going to have to go to a speech pathologist!");
-            // }else{
-            //     System.out.println("\t🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊");
-            //     System.out.println("\t🎊🎊🎊 CONGRATULATIONS! ITS TIME FOR KINDERGARTEN... 🎊🎊🎊🎊\n");
-            //     System.out.println("\tNOW...\n\tCAN YOU MAKE IT THROUGH KINDERGARTEN TO 1ST GRADE...");
-            //     System.out.println("\t🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊");
-            // }
-            System.out.println("\t🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊");
-            System.out.println("\t🎊🎊🎊 CONGRATULATIONS! ITS TIME FOR KINDERGARTEN... 🎊🎊🎊🎊\n");
-            System.out.println("\tNOW...\n\tCAN YOU MAKE IT THROUGH KINDERGARTEN TO 1ST GRADE...");
-            System.out.println("\t🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊");
+            System.out.println("\t🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊");
+            System.out.println("\tCONGRATULATIONS! ITS TIME FOR KINDERGARTEN...\n");
+            System.out.println("\tNOW...CAN YOU MAKE IT THROUGH KINDERGARTEN TO 1ST GRADE...");
+            System.out.println("\t🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊");
+            Displays.displayCongrats();
+            System.out.println("");
 
             if(baby.getMotorSkills() < 7){
-                System.out.println("\nhowever, baby " + baby.getName() + " is probably going to have a hard time in PE!");
+                System.out.println("BABY " + baby.getName() + " IS GOING TO HAVE A HARD TIME IN PE WITH SUCH LOW MOTOR SKILLS");
             }
             if(baby.getTrustConnectSkills() < 7){
-                System.out.println("\nkeep in mind, baby " + baby.getName() + " is probably going to have a hard time making friends and will have complicated relationships with teachers!");
+                System.out.println("BABY " + baby.getName() + " IS GOING TO HAVE A HARD TIME MAKING FRIENDS AND"); 
+                System.out.println("BUILDING POSITIVE TEACHER-STUDENT RELATIONSHIPS WITH SUCH LOW TRUST & CONNECT SKILLS");
             }
             if(baby.getSpeechSkills() < 7){
-                System.out.println("\nit looks like, baby " + baby.getName() + " is going to have to go to a speech pathologist!");
+                System.out.println("WELL, LOOKS LIKE BABY " + baby.getName() + " IS GOING TO BE SEEING A SPEECH PATHOLOGIST!");
             }
 
-            System.out.println("But yay! Congratulations for making it to kindergarten anyway!\nThe end.");
+            System.out.println("BUT STILL... CONGRATULATIONS FOR MAKING IT TO KINDERGARTEN\nTHE END.");
         }else{
-            System.out.println("Sorry, you didn't make it to kindergarten this year. Maybe next year...");
+            System.out.println("SORRY YOU DID NOT MAKE IT TO KINDERGARTEN THIS YEAR. MAYBE ONE MORE YEAR WILL DO THE TRICK...");
         }
     }
     
@@ -226,12 +220,12 @@ public class Game {
         loadArrayLists();
 
         Scanner input = new Scanner(System.in);
-        Displays.display("\tWELCOME TO KINDERGROW!\n\n\tCONGRATS! YOU ARE A BABY AGAIN\n\n\tYOUR GOAL IS TO GET THROUGH INFANCY AND IMPROVE ON ALL SKILLS BEFORE ENTERING KINDERGARTEN\n");
+        Displays.display("WELCOME TO KINDERGROW!\n\nCONGRATS! YOU ARE A BABY AGAIN\n\nYOUR GOAL IS TO GET THROUGH INFANCY AND IMPROVE \nON ALL SKILLS BEFORE ENTERING KINDERGARTEN\n");
 
         Baby baby = createBaby(input);
 
         Displays.displayScene();
-        System.out.println("\t 🎊 CONGRATULATIONS! YOU WERE BIRTHED! 🎊\n");
+        System.out.println("\n🎊 CONGRATULATIONS! YOU WERE BIRTHED! 🎊\n");
         printBabyInfo(baby);
 
         // actual game
