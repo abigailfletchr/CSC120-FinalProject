@@ -24,10 +24,10 @@ public class Infancy {
         System.out.println("-------------------------------\n");
 
         System.out.println("you are going about your day and start to feel agitated.");
-        System.out.println("one of your parents came to be with you! YAY!\n");
+        System.out.println("one of your parents comes to be with you! YAY!\n");
         System.out.println("\033[3mpress enter to continue\033[0m");
         enter = input.nextLine();
-        System.out.println("you are still figuring life out and can not tell if it's your mom, moms, dad, dads, or parent helping you.");
+        System.out.println("you are still figuring life out and can not tell if it's your mom/s, dad/s, or parent/s helping you.");
         System.out.println("you know that you can babble the sounds 'mamama' 'dadada' or 'lalala' to identify who it is.\n");
         System.out.println("\033[3mpress enter to continue\033[0m");
         enter = input.nextLine();

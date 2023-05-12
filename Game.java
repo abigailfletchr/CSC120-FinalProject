@@ -82,10 +82,10 @@ public class Game {
      * @param b the baby created from the baby constructor from the Baby class
      */
     public static void printBabyStats(Baby b){
-        System.out.println("\n\tWEIGHT: " + b.getWeight() + " oz.");
-        System.out.println("\tMOTOR SKILLS: " + b.getMotorSkills());
-        System.out.println("\tTRUST & CONNECTION SKILLS: " + b.getTrustConnectSkills());
-        System.out.println("\tSPEECH SKILLS: " + b.getSpeechSkills() + "\n");
+        System.out.println("\nWEIGHT: " + b.getWeight() + " oz.");
+        System.out.println("MOTOR SKILLS: " + b.getMotorSkills());
+        System.out.println("TRUST & CONNECTION SKILLS: " + b.getTrustConnectSkills());
+        System.out.println("SPEECH SKILLS: " + b.getSpeechSkills() + "\n");
     }
 
     /**
@@ -190,7 +190,7 @@ public class Game {
                     maxBabble = tries.get("babble challenge") >= 2;
                     input.nextLine();
                 }else{
-                    System.out.println("OOPS, YOU GAVE NO MORE SPEECH SKILLS CHALLENGES");
+                    System.out.println("OOPS, YOU HAVE NO MORE SPEECH SKILLS CHALLENGES");
                     blockSpeech = true;
                 }
             }else{
