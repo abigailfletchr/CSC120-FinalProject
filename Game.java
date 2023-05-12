@@ -209,22 +209,22 @@ public class Game {
         }
 
         if(kindergarten){
-            System.out.println("\t🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊");
-            System.out.println("\tCONGRATULATIONS! ITS TIME FOR KINDERGARTEN...\n");
-            System.out.println("\tNOW...CAN YOU MAKE IT THROUGH KINDERGARTEN TO 1ST GRADE...");
-            System.out.println("\t🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊");
+            System.out.println("🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊");
+            System.out.println("CONGRATULATIONS! ITS TIME FOR KINDERGARTEN...\n");
+            System.out.println("NOW...CAN YOU MAKE IT THROUGH KINDERGARTEN TO 1ST GRADE...");
+            System.out.println("🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊🎊");
             Displays.displayCongrats();
             System.out.println("");
 
             if(baby.getMotorSkills() < 7){
-                System.out.println("BABY " + baby.getName() + " IS GOING TO HAVE A HARD TIME IN PE WITH SUCH LOW MOTOR SKILLS");
+                System.out.println("BABY " + baby.getName().toUpperCase() + " IS GOING TO HAVE A HARD TIME IN PE WITH SUCH LOW MOTOR SKILLS.");
             }
             if(baby.getTrustConnectSkills() < 7){
-                System.out.println("BABY " + baby.getName() + " IS GOING TO HAVE A HARD TIME MAKING FRIENDS AND"); 
-                System.out.println("BUILDING POSITIVE TEACHER-STUDENT RELATIONSHIPS WITH SUCH LOW TRUST & CONNECT SKILLS");
+                System.out.println("BABY " + baby.getName().toUpperCase() + " IS GOING TO HAVE A HARD TIME MAKING FRIENDS AND"); 
+                System.out.println("BUILDING POSITIVE TEACHER-STUDENT RELATIONSHIPS WITH SUCH LOW TRUST & CONNECT SKILLS.");
             }
             if(baby.getSpeechSkills() < 7){
-                System.out.println("WELL, LOOKS LIKE BABY " + baby.getName() + " IS GOING TO BE SEEING A SPEECH PATHOLOGIST!");
+                System.out.println("WELL, LOOKS LIKE BABY " + baby.getName().toUpperCase() + " IS GOING TO BE SEEING A SPEECH PATHOLOGIST!");
             }
 
             System.out.println("BUT STILL... CONGRATULATIONS FOR MAKING IT TO KINDERGARTEN\nTHE END.");
@@ -246,7 +246,6 @@ public class Game {
         System.out.println("\n🎊 CONGRATULATIONS! YOU WERE BIRTHED! 🎊\n");
         printBabyInfo(baby);
 
-        // actual game
         game(baby, input);
 
         input.close();
