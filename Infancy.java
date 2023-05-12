@@ -4,15 +4,17 @@ import java.util.Scanner;
 public class Infancy {
 
     /**
-     * 
+     * @param pointsReceived the amount of points the player has received while completing the challenges
      */
     private static int pointsReceived;
 
     /**
-     * 
-     * @param baby
-     * @param input
-     * @return
+     * A method that creates a challenge for the user to improve upon their speech skills.
+     * The babble challenge has the user guess what parent is in front of them by inputing
+     * different values. The user wins points based on if they guess correctly.
+     * @param baby the baby created from the Baby class
+     * @param input the input from the user
+     * @return number of points won
      */
     public static int babbleChallenge(Baby baby, Scanner input){
         String enter = "";
@@ -79,10 +81,13 @@ public class Infancy {
     }
 
     /**
-     * 
-     * @param baby
-     * @param input
-     * @return
+     * A method that creates a challenge for the user to improve upon their trust & connection skills.
+     * The sign language challenge has the user guess what sign language description matches to the
+     * need the computer randomly generates for them. The user wins points based on if they guess
+     * correctly.
+     * @param baby the baby created from the Baby class
+     * @param input the input from the user
+     * @return number of points won
      */
     public static int signLangChallenge(Baby baby, Scanner input){
 
@@ -171,10 +176,13 @@ public class Infancy {
     }
 
     /**
-     * 
-     * @param baby
-     * @param input
-     * @return
+     * A method that creates a challenge for the user to improve upon their motor skills.
+     * The picking head up challenge has the user guess a number. If the number is close to
+     * or is the randomly generated number they 'have enough strength to pick their head up'.
+     * The user wins points based on how close their guess is.
+     * @param baby the baby created from the Baby class
+     * @param input the input from the user
+     * @return number of points won
      */
     public static int pickHeadUpChallenge(Baby baby, Scanner input){
         String enter = "";
@@ -230,11 +238,14 @@ public class Infancy {
     }
 
     /**
-     * 
-     * @param baby
-     * @param stuffedAnimal
-     * @param input
-     * @return
+     * A method that creates a challenge for the user to improve upon their motor skills.
+     * The crawling challange has the user guess what room their stuffed animal is in.
+     * The computer randomly generates a room and if the user guesses the room correctly
+     * they win points.
+     * @param baby the baby created from the Baby class
+     * @param stuffedAnimal the stuffed animal the user chooses in the Game class
+     * @param input the input from the user
+     * @return number of points won
      */
     public static int crawlChallenge(Baby baby, String stuffedAnimal, Scanner input){
         String enter = "";

@@ -5,7 +5,12 @@ import java.util.Scanner;
 public class Game {
 
     /**
-     * 
+     * @param kindergarten boolean value that specifies if the baby has reached kindergarten
+     * @param points the amount of points the user/baby has/earns
+     * @param baby a baby from the Baby class
+     * @param eyeList an arraylist of the eye color choices
+     * @param hairList an arraylist of the hair color choices
+     * @param stuffedAnimal an arraylist of stuffed animal choices
      */
     private static boolean kindergarten = false;
     private static int points;
@@ -16,7 +21,10 @@ public class Game {
 
 
     /**
-     * 
+     * A method that basically creates the baby based on
+     * the user's inputs and randomly generated values for
+     * the skills points and weights.
+     * @param input the input for the user to put their choices
      */
     public static Baby createBaby(Scanner input){
         String enter = "";
@@ -57,7 +65,9 @@ public class Game {
     }
 
     /**
-     * 
+     * A method that prints the statistics 
+     * but written out into a story almost.
+     * @param b the baby created from the baby constructor from the Baby class
      */
     public static void printBabyInfo(Baby b){
         System.out.println("BABY " + b.getName().toUpperCase() + " HAS " + b.getEyes() + " EYES & " + b.getHair() + " HAIR!");
@@ -67,8 +77,9 @@ public class Game {
     }
 
     /**
-     * 
-     * @param b
+     * A method that prints the statistics 
+     * and characteristics of the baby.
+     * @param b the baby created from the baby constructor from the Baby class
      */
     public static void printBabyStats(Baby b){
         System.out.println("\n\tWEIGHT: " + b.getWeight() + " oz.");
@@ -78,7 +89,8 @@ public class Game {
     }
 
     /**
-     * 
+     * A method that adds values to array lists which act as the 
+     * options for eye color, hair color, and stuffed animal choices.
      */
     public static void loadArrayLists(){
         eyeList.add("BROWN");
@@ -100,9 +112,15 @@ public class Game {
     }
     
     /**
-     * 
-     * @param baby
-     * @param input
+     * A method where the game is actually run. The user chooses
+     * what challenge they want to try and the method runs the 
+     * challenges. It also checks to make sure the user has not
+     * completed each challenge more than twice & confirms and
+     * congratulates the user once they have gotten to kindergarten.
+     * Lastly, the method gives a description of the baby's readiness
+     * for kindergarten based on the skills points they acheived.
+     * @param baby a baby from the Baby class
+     * @param input the input for the user to put their choices
      */
     public static void game(Baby baby, Scanner input){
         String challengeChoice = "";
