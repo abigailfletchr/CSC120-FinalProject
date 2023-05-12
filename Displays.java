@@ -1,7 +1,9 @@
 public class Displays {
 
     /**
-     * 
+     * A method that displays the ASCII art of a baby
+     * and it's toy at the start of the game when the
+     * user creates their baby.
      */
     public static void displayScene(){
         String scene =
@@ -18,8 +20,9 @@ public class Displays {
     }
 
     /**
-     * 
-     * @param message
+     * A method that displays a simple straight line as
+     * like a banner to seperate the scenes.
+     * @param message a message to be displayed underneath the line/banner
      */
     public static void display(String message){
        
@@ -28,7 +31,10 @@ public class Displays {
     }
 
     /**
-     * 
+     * A method that displays the ASCII art of
+     * a room that is displayed during the crawling
+     * challenge when the game narrates that the
+     * baby looks up to a room.
      */
     public static void displayRoom(){
         String room = 
@@ -57,7 +63,9 @@ public class Displays {
     }
 
     /**
-     * 
+     * A method that displays the ASCII art of
+     * a "congrats" banner for when the user/baby
+     * gets past infancy to kindergarten.
      */
     public static void displayCongrats(){
         String congrats =
